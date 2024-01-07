@@ -12,11 +12,11 @@ enum boolean
 int top = -1;
 int stack[MAX];
 
-void push(int data);
-int pop();
-int top_value();
-bool isEmpty();
-void printStack();
+void push(int data); // add data to stack
+int pop();           // delete data in stack and return it
+int peek();          // show to last value
+bool isEmpty();      // check stack is empty
+void printStack();   // prints all elements in stack
 
 int main(int argc, char const *argv[])
 {
@@ -33,6 +33,24 @@ int main(int argc, char const *argv[])
     printf("popped data is : %d\n", pop());
     push(100);
     printStack();
+
+    printf("Top element from stack : %d\n", peek());
+
+    if (isEmpty())
+        printf("stack is empty!\n");
+    else
+        printf("Stack is not empty!\n");
+
+    printf("popped data is : %d\n", pop());
+    printf("popped data is : %d\n", pop());
+    printf("popped data is : %d\n", pop());
+    printf("popped data is : %d\n", pop());
+    printf("popped data is : %d\n", pop());
+
+    if (isEmpty())
+        printf("stack is empty!\n");
+    else
+        printf("Stack is not empty!\n");
 
     return 0;
 }
@@ -63,7 +81,7 @@ bool isEmpty()
     return top == -1 ? true : false;
 }
 
-int top_value()
+int peek()
 {
     if (top != -1)
         return stack[top];
